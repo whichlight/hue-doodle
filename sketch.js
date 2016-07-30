@@ -67,7 +67,7 @@ var touchEnded= function(){
 }
 
 var initCover = function(){
-  var recw = 40;
+  var recw = 20;
   var numr = w/recw;
 
   background(1,0,1);
