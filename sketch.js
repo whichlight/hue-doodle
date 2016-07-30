@@ -67,17 +67,19 @@ var touchEnded= function(){
 }
 
 var initCover = function(){
-  var recw = 20;
-  var numr = w/recw;
-
   background(1,0,1);
+
+  var recw = 1;
+  var numr = w/recw;
   for(var i =0; i<numr;i++){
       var c =320*i/numr;
       var l = 0.8
      stroke(c,l,1);
      fill(c,l,1);
-     rect(recw*i,0,recw/2,h)
+     rect(recw*i,0,recw,h)
   }
+
+
 }
 
 var pressed= function(x,y){
