@@ -13,6 +13,8 @@ var totalLength = 0;
 var autodrawinit = false;
 var autodrawing = false;
 var recordDraw = true;
+var tapped=false;
+
 
 var record = [];
 
@@ -54,6 +56,7 @@ var touchStarted= function(){
       if(el){
         el.remove();
       }
+      initCover();
     }
     touched = true;
 
@@ -68,11 +71,21 @@ var touchMoved= function(){
 var touchEnded= function(){
   pressed(touchX,touchY);
   endgesture = true;
-
   if(totalLength==0){
 
-    initCover();
-  }
+    //double tap
+    if(!tapped){
+      tapped=setTimeout(function(){
+        tapped=null
+      },300);
+      }
+      else{
+       clearTimeout(tapped);
+       tapped=null
+       initCover();
+      }
+    }
+
   return false;
 }
 
