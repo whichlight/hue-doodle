@@ -1,0 +1,6 @@
+add sounds
+make burst development based on time
+
+
+NOTE: you have to create a synth after a touch event, otherwise it wont work on
+mobile
