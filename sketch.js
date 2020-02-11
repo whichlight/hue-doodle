@@ -28,14 +28,6 @@ var setup = function(){
   w = windowWidth;
   h = windowHeight;
 
-  //disable default touch events for mobile
-  var el = document.getElementsByTagName("canvas")[0];
-  el.addEventListener("touchstart", pdefault, false);
-  el.addEventListener("touchend", pdefault, false);
-  el.addEventListener("touchcancel", pdefault, false);
-  el.addEventListener("touchleave", pdefault, false);
-  el.addEventListener("touchmove", pdefault, false);
-
   past = createVector(0, 0);
   background(color(0,0,0));
   initCover();
@@ -45,16 +37,13 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
-function pdefault(e){
-  e.preventDefault()
-}
-
 var touchStarted= function(){
     newgesture = true;
     if(!touched){
       var el = document.getElementById("info");
       if(el){
         el.remove();
+        initCover();
       }
       initCover();
     }
